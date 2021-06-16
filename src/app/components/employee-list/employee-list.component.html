@@ -1,0 +1,13 @@
+<p>רשימת עובדים</p>
+<button (click)="filterEmployees()"> סינון</button>
+<div class="labels">
+    <span class="fieldLabel">מזהה</span>
+    <span class="fieldLabel">שם</span>
+    <span class="fieldLabel"> גיל</span>
+    <span class="fieldLabel">משכורת</span>
+</div>
+<ul style="list-style-type:none;">
+<li *ngFor="let employee of employeesFiltered">
+    <app-employee [employee]="employee" (deleteEmployee)="deleteEmployee($event)"></app-employee>
+</li>
+</ul>
